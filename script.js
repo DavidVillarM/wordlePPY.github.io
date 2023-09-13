@@ -1,5 +1,4 @@
-console.log("empezamos de nuevo");
-
+//console.log("empezamos de nuevo");
 
 window.addEventListener('load', init);
 
@@ -10,11 +9,17 @@ const button = document.getElementById("guess-button");
 
 button.addEventListener("click", intentar);
 
-let diccionario = ['APPLE', 'HURLS', 'WINGS', 'YOUTH', 'MOUTH', 'SMILE', 'CURVE', 'MOIST'];
+let palabra = '';
+
+let diccionario = fetch('https://random-word-api.herokuapp.com/word?length=5&lang=en')
+ 	.then(response => response.json())
+ 	.then(response => {
+         console.log(response)
+         palabra = response[0].toUpperCase()
+     })
+ 	.catch(err => console.error(err));
 
 let intentos = 6;
-
-const palabra = diccionario[Math.floor(Math.random() * diccionario.length)];
 
 function intentar(){
     const INTENTO = leerIntento();
@@ -26,6 +31,12 @@ function intentar(){
 
     const ROW = document.createElement('div');
     ROW.className = 'row';
+
+    if (INTENTO.length !=5) {
+        alert("Debe ingresar una palabra de 5 letras");
+        return;
+    }
+
     for (const i in palabra) {
         const SPAN = document.createElement('span');
         SPAN.className = 'letter';
@@ -53,7 +64,11 @@ function intentar(){
 function leerIntento(){
     let intento = document.getElementById("guess-input")
     intento = intento.value;
-    intento= intento.toUpperCase();
+    if (intento.length == 5){
+        intento= intento.toUpperCase();
+    } else {
+        alert('Debe ingresar una palabra de 5 letras')
+    }
     return intento;
 }
 

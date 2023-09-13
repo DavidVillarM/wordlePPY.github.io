@@ -9,6 +9,16 @@ h1 {
     text-align: center;
     margin-top: 50px;
 }
+h3 {
+    font-family: 'Montserrat',  sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+h5{
+    font-family: 'Montserrat',  sans-serif;
+    text-align: center;
+}
 
 #guess-input{
     display: block;
