@@ -8,6 +8,7 @@ h1 {
     font-family: 'Montserrat',  sans-serif;
     text-align: center;
     margin-top: 50px;
+    margin-bottom: 10px;
 }
 h3 {
     font-family: 'Montserrat',  sans-serif;
@@ -23,12 +24,20 @@ h5{
 #guess-input{
     display: block;
     margin: 0 auto 20px;
+    margin-top: 10px;
     padding: 10px;
     font-size: 18px;
     width: 250px;
     border: 1px solid #ccc;
+    
 }
-
+#instrucciones{
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    background-color: #0CBABA;
+}
 #guess-button {
     display: block;
     margin: 0 auto;
@@ -37,7 +46,8 @@ h5{
     background-color: #0CBABA;
     color: #fff;
     border: none;
-    border-radius: 3px;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 button:active {
@@ -58,7 +68,7 @@ button:active {
     position: relative;
     align-content: center;
     text-align: center;
-    margin-top: auto;
+    margin-top: 20px;
     margin: auto;
 }
 

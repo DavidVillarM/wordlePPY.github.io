@@ -5,13 +5,28 @@ window.addEventListener('load', init);
 function init(){
     console.log('Esto se ejecuta solo cuando se carga la pagina web');
 }
+
+const instru = document.getElementById("instrucciones");
+
+instru.addEventListener("click", explicar);
+
+function explicar(){
+    alert("Instrucciones de Juego:\n" + 
+        "Tienes que adivinar la palabra oculta en 6 intentos y" + " el color de las letras cambia para mostrar lo cerca que estas. " +
+            "Para comenzar el juego, simplemente ingrese cualquier palabra, por ejemplo:\n \n" + "APPLE\n \n" +
+            "- Si la letra no existe en la palabra que debes adivinar, la casilla estara en gris \n" +
+            "- Si la letra esta dentro de la palabra pero no en la posicion correcta, la casilla se volvera amarilla \n" +
+            "- Si la letra esta dentro de la palabra y en la posicion correcta, la casilla se volvera verde\n");
+    return;
+}
+
 const button = document.getElementById("guess-button");
 
 button.addEventListener("click", intentar);
 
 let palabra = '';
 
-let diccionario = fetch('https://random-word-api.herokuapp.com/word?length=5&lang=en')
+let diccionario = fetch('https://random-word-api.herokuapp.com/word?length=5&lang=es')
  	.then(response => response.json())
  	.then(response => {
          console.log(response)
@@ -27,6 +42,13 @@ function intentar(){
         terminar("<h1>GANASTE! 😀</h1>")
         return;
     }
+    for (const i in palabra){
+        if (INTENTO[i] === Number){
+            ("Debe ingresar un caracter valido");
+            return;
+        }
+    }
+
     const GRID = document.getElementById("grid");
 
     const ROW = document.createElement('div');
@@ -67,7 +89,7 @@ function leerIntento(){
     if (intento.length == 5){
         intento= intento.toUpperCase();
     } else {
-        alert('Debe ingresar una palabra de 5 letras')
+        alert('Ingreso no valido')
     }
     return intento;
 }
