@@ -24,9 +24,7 @@ const button = document.getElementById("guess-button");
 
 button.addEventListener("click", intentar);
 
-let palabra = '';
-
-let diccionario = fetch('https://random-word-api.herokuapp.com/word?length=5&lang=es')
+let palabra = fetch('https://random-word-api.herokuapp.com/word?length=5&lang=es')
  	.then(response => response.json())
  	.then(response => {
          console.log(response)
@@ -36,6 +34,8 @@ let diccionario = fetch('https://random-word-api.herokuapp.com/word?length=5&lan
 
 let intentos = 6;
 
+
+//Funcion para comparar la palabra ingresada con la palabra aleatoria
 function intentar(){
     const INTENTO = leerIntento();
     if (INTENTO === palabra) {
