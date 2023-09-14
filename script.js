@@ -13,7 +13,7 @@ instru.addEventListener("click", explicar);
 function explicar(){
     alert("Instrucciones del Juego:\n" + 
         "Tienes que adivinar la palabra oculta en 6 intentos y" + " el color de las letras cambia para mostrar lo cerca que estas. " +
-            "Para comenzar el juego, simplemente ingrese cualquier palabra, por ejemplo:\n \n" + "APPLE\n \n" +
+            "Para comenzar el juego, simplemente ingrese cualquier palabra, por ejemplo:\n \n" + "MANOS\n \n" +
             "- Si la letra no existe en la palabra que debes adivinar, la casilla estara en gris \n" +
             "- Si la letra esta dentro de la palabra pero no en la posicion correcta, la casilla se volvera amarilla \n" +
             "- Si la letra esta dentro de la palabra y en la posicion correcta, la casilla se volvera verde\n");
